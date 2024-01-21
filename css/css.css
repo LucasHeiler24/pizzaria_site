@@ -223,7 +223,7 @@ input[type="checkbox"] {
     border: 2px solid rgb(61, 2, 128);
     color: white;
     font-size: 15px;
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 .content-comentario input::placeholder {
@@ -380,7 +380,6 @@ input[type="checkbox"] {
 @media screen and (max-width: 930px) {
     .content-comentario input::placeholder {
         color: white;
-        padding-left: 15px;
         font-size: 12px;
     }
 }
@@ -388,7 +387,6 @@ input[type="checkbox"] {
 @media screen and (max-width: 378px) {
     .content-comentario input::placeholder {
         color: white;
-        padding-left: 15px;
         font-size: 11px;
     }
 }
