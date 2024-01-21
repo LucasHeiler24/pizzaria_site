@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./js/js.js" defer></script>
+    <link rel="stylesheet" href="./css/css.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/pizzaIcone.png">
+        </div>
+        <div class="btn-menu">
+            <button id="btn-acompanhar">
+                Acompanhar meu pedido
+                <img src="img/pizzaIconeBtn.png">
+            </button>
+        </div>
+    </div>
+    <div class="background">
+        <div class="escurecer" id="escurecer"></div>
+        <div class="sombra">
+            <div class="background-pedido">
+                <div class="tam-pizza">
+                    <h1>Selecione o tamanho da pizza:</h1>
+                    <select class="selecao-tam" id="tamanhosPizza">
+                        <option id="tamPequenho" value="2">Tamanho pequeno (até 2 recheios) - R$ 35.00</option>
+                        <option id="tamMedio" value="4">Tamanho médio (até 4 recheios) - R$ 55.00</option>
+                        <option id="tamGrande" value="6">Tamanho grande (até 6 recheios) - R$ 70.00</option>
+                        <option id="tamFamilia" value="8">Tamanho família (até 8 recheios) - R$ 85.00</option>
+                    </select>
+                </div>
+                <div class="bebidas">
+                    <h1>Deseja alguma bebida?</h1>
+                    <select class="selecao-bebi" id="selecaoBebidas">
+                        <option id="semBebida" value="0">Sem bebida</option>
+                        <option id="coca" value="12.00">Coca-Cola (2L) - R$ 12.00</option>
+                        <option id="agua" value="6.00">Água(120mL) - R$ 6.00</option>
+                        <option id="energetico" value="9.90">Energético Red-Bull (250mL) - R$ 9.90</option>
+                        <option id="cerveja" value="10.70">Cerveja (600mL) - R$ 10.70</option>
+                        <option id="vinho" value="18.90">Vinho tinto (Garrafa) - R$ 18.90</option>
+                        <option id="suco" value="8.00">Suco (1,5L) - R$ 8.00</option>
+                    </select>
+                </div>
+                <div class="recheios">
+                    <h1>Selecione seus recheios, conforme o tamanho da sua pizza:</h1>
+                    <div class="content-recheios">
+                        4 queijos<input type="checkbox" class="sabor" value="4 queijos" style="width: 3vh;">
+                        Calabresa<input type="checkbox" class="sabor" value="Calabresa" style="width: 3vh;">
+                        Pepperoni<input type="checkbox" class="sabor" value="Pepperoni" style="width: 3vh;">
+                        Milho<input type="checkbox" class="sabor" value="Milho" style="width: 3vh;">
+                        Frango com catupiry<input type="checkbox" class="sabor" value="Frango com catupiry" style="width: 3vh;">
+                        Cogumelo<input type="checkbox" class="sabor" value="Cogumelo" style="width: 3vh;">
+                        Marguerita<input type="checkbox" class="sabor" value="Marguerita" style="width: 3vh;">
+                        Atum<input type="checkbox" class="sabor" value="Atum" style="width: 3vh;">
+                        Muçarela<input type="checkbox" class="sabor" value="Muçarela" style="width: 3vh;">
+                        Portuguesa<input type="checkbox" class="sabor" value="Portuguesa" style="width: 3vh;">
+                        Napolitana<input type="checkbox" class="sabor" value="Napolitana" style="width: 3vh;">
+                        Alho e óleo<input type="checkbox" class="sabor" value="Alho e óleo" style="width: 3vh;">
+                        Lombo canadense<input type="checkbox" class="sabor" value="Lombo canadense" style="width: 3vh;">
+                        Romeu e julieta<input type="checkbox" class="sabor" value="Romeu e julieta" style="width: 3vh;">
+                        Café<input type="checkbox" class="sabor" value="Café" style="width: 3vh;">
+                        Califórnia<input type="checkbox" class="sabor" value="Califórnia" style="width: 3vh;">
+                        Chocolate<input type="checkbox" class="sabor" value="Chocolate" style="width: 3vh;">
+                        Sensação<input type="checkbox" class="sabor" value="Sensação" style="width: 3vh;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="telaVerPedido" id="telaVerPedido">
+            <div class="titulo">
+                <h1>Seu pedido</h1>
+                <button id="btnFecharTela">Fechar</button>
+            </div>
+            <div class="parteTamDaPizza">
+                <h1>Tamanho da pizza:</h1>
+                <p id="tamDaPizzaPedido"></p>
+                <p id="precoTamDaPizzaPedido"></p>
+            </div>
+            <div class="parteBebida">
+                <h1>Bebida:</h1>
+                <p id="bebidaPedido"></p>
+                <p id="precoBebidaPedido"></p>
+            </div>
+            <div class="parteRecheios">
+                <h1>Seus recheios:</h1>
+                <p id="recheiosPedidos"></p>
+            </div>
+            <div class="partePrecoTotal">
+                <h1 id="precoTotal"></h1>
+            </div>
+            <div class="content-comentario">
+                <input type="text" id="inText"
+                    placeholder="Observação: retirar cebola, suco de abacaxi, borda recheada...">
+            </div>
+            <div class="finalizarPedido">
+                <button onclick="finalizarPedido()">Finalizar meu pedido</button>
+            </div>
+        </div>
+        <div class="agradecimentos" id="agradecimentos">
+            <div class="text-header">
+                <h1>Muito obrigado!</h1>
+                <button onclick="voltar()">Voltar</button>
+            </div>
+            <div class="content-agradecimentos">
+                <p>
+                    Fico feliz por ter testado meu projeto de site de pizzaria! Espero que tenha gostado!
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

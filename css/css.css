@@ -1,0 +1,858 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 15vh;
+    background: #202020;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    padding-left: 20px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.btn-menu {
+    padding-right: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+    font-family: 'Heebo', sans-serif;
+}
+
+#btn-acompanhar img {
+    width: 30px;
+}
+
+#btn-acompanhar {
+    background: none;
+    border: 3px solid #ff0000;
+    color: white;
+    border-radius: 50px;
+    padding: 20px 10px 15px 20px;
+    font-size: 25px;
+    transition: all ease-in-out 1.5s;
+    cursor: pointer;
+}
+
+#btn-acompanhar:hover {
+    background: #ff0000;
+}
+
+.background {
+    height: 100vh;
+    background: url(https://static.wixstatic.com/media/2e0689_341b31150f23fa5fb6671cdda12a3838.jpg/v1/fill/w_1279,h_908,al_c,q_85,enc_auto/2e0689_341b31150f23fa5fb6671cdda12a3838.jpg);
+    font-family: 'Jost', sans-serif;
+    display: flex;
+}
+
+.sombra {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.background-pedido {
+    height: 90vh;
+    margin: 20px;
+    background: #6b6b6b8c;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.tam-pizza {
+    height: 20vh;
+    background: #cc9b63;
+    width: 40%;
+    border-radius: 25px;
+}
+
+.tam-pizza h1 {
+    text-align: center;
+}
+
+.selecao-tam {
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    border: none;
+    background: #dbc964;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.bebidas {
+    height: 20vh;
+    background: #e9be33;
+    width: 40%;
+    border-radius: 25px;
+}
+
+.bebidas h1 {
+    text-align: center;
+}
+
+.selecao-bebi {
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    border: none;
+    background: #fff3b0;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.recheios {
+    width: 100%;
+}
+
+.content-recheios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    place-items: center;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+    height: 3vh;
+}
+
+.recheios h1 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.telaVerPedido {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    max-width: 90vh;
+    background: #202020;
+    width: 50%;
+    font-family: 'Jost', sans-serif;
+    right: 0;
+    color: white;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.titulo button {
+    background: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+}
+
+.titulo button:hover {
+    background: #ffffff;
+    color: black;
+}
+
+.finalizarPedido button {
+    width: 100%;
+    height: 10vh;
+    font-size: 20px;
+    border: none;
+    background: linear-gradient(to left, rgb(231, 182, 20), rgb(241, 225, 76));
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.finalizarPedido button:hover {
+    background: linear-gradient(to right, rgb(231, 182, 20), rgb(241, 225, 76));
+}
+
+.parteTamDaPizza,
+.parteBebida,
+.parteRecheios,
+.partePrecoTotal,
+.content-comentario {
+    padding-left: 10px;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.parteTamDaPizza h1,
+.parteBebida h1,
+.parteRecheios h1,
+.partePrecoTotal h1 {
+    font-size: 20px;
+}
+
+.parteTamDaPizza h1,
+.parteBebida h1,
+.parteRecheios h1 {
+    text-align: center;
+}
+
+.content-comentario input {
+    width: 98%;
+    height: 8vh;
+    background: none;
+    border-radius: 25px;
+    border: 2px solid rgb(61, 2, 128);
+    color: white;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.content-comentario input::placeholder {
+    color: white;
+}
+
+.content-comentario input:focus {
+    color: white;
+    padding-left: 15px;
+}
+
+.escurecer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+.agradecimentos {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    background: #632abe;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: 'Mukta', sans-serif;
+    color: white;
+    z-index: 9999999999;
+}
+
+.text-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.text-header button {
+    background: none;
+    border: 2px solid #230553;
+    border-radius: 25px;
+    color: white;
+    width: 70px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.text-header button:hover {
+    border: none;
+    background: #230553;
+    color: white;
+}
+
+.content-agradecimentos {
+    text-align: justify;
+    padding: 10px;
+}
+
+.escurecer {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 1100px) {
+    .selecao-tam {
+        text-align: center;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .logo {
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    .content-recheios {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        place-items: center;
+        font-size: 20px;
+        max-height: 300px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .bebidas h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .tam-pizza h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 20px 20px 20px 20px;
+        font-size: 25px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 15px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .content-comentario input::placeholder {
+        color: white;
+        padding-left: 15px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .content-comentario input::placeholder {
+        color: white;
+        padding-left: 15px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .bebidas h1 {
+        font-size: 22px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .tam-pizza h1 {
+        font-size: 22px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 20px 20px 20px 20px;
+        font-size: 25px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .telaVerPedido {
+        display: none;
+        position: fixed;
+        max-width: 90vh;
+        background: #202020;
+        width: 100%;
+        font-family: 'Jost', sans-serif;
+        color: white;
+        border-radius: 20px;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 20px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .bebidas h1 {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .tam-pizza h1 {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    .background-pedido {
+        height: 90vh;
+        margin: 20px;
+        background: #6b6b6b8c;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .tam-pizza {
+        height: 20vh;
+        background: #cc9b63;
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 10px;
+    }
+
+    .bebidas {
+        height: 20vh;
+        background: #e9be33;
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .bebidas h1 {
+        font-size: 25px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .tam-pizza h1 {
+        font-size: 25px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 875px) {
+    .recheios h1 {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 25px;
+    }
+
+    .content-recheios {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        place-items: center;
+        font-size: 18px;
+        max-height: 270px;
+        overflow: scroll;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 20px 20px 20px 20px;
+        font-size: 25px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 15px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+}
+
+@media screen and (max-width: 701px) {
+    .recheios h1 {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 22px;
+    }
+
+    .content-recheios {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        place-items: center;
+        font-size: 18px;
+        max-height: 270px;
+        overflow: scroll;
+        overflow-x: hidden;
+        padding-top: 10px;
+    }
+
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 20px 20px 20px 20px;
+        font-size: 25px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 15px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+}
+
+@media screen and (max-width: 627px) {
+    .content-recheios {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        place-items: center;
+        font-size: 18px;
+        max-height: 250px;
+        overflow: scroll;
+        overflow-x: hidden;
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 10px 20px 10px;
+        font-size: 20px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 20px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        width: 100px;
+        padding-top: 10px;
+    }
+
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 10px 20px 10px;
+        font-size: 16px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 20px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+
+    .logo {
+        padding-left: 10px;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 410px) {
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .selecao-tam {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #dbc964;
+        margin-top: 20px;
+        font-size: 12.5px;
+        cursor: pointer;
+    }
+
+    .selecao-bebi {
+        text-align: left;
+        width: 100%;
+        height: 30%;
+        border: none;
+        background: #fff3b0;
+        margin-top: 20px;
+        font-size: 12.5px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 398px) {
+    .bebidas h1 {
+        font-size: 21px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .tam-pizza h1 {
+        font-size: 21px;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .logo img {
+        width: 80px;
+        padding-top: 30px;
+    }
+
+    #btn-acompanhar {
+        background: none;
+        border: 3px solid #ff0000;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 10px 20px 10px;
+        font-size: 16px;
+        transition: all ease-in-out 1.5s;
+        cursor: pointer;
+    }
+
+    .btn-menu {
+        padding-right: 20px;
+        padding-top: 20px;
+        cursor: pointer;
+        font-family: 'Heebo', sans-serif;
+    }
+
+    .logo {
+        padding-left: 10px;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .content-recheios {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        place-items: center;
+        font-size: 15px;
+        max-height: 220px;
+        overflow: scroll;
+        overflow-x: hidden;
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 400px){
+.text-header h1{
+    font-size: 28px;
+}
+}
